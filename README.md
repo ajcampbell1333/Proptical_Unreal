@@ -1,22 +1,24 @@
 # Proptical Unreal Engine Plugin
-**[PROJECT-TAGLINE]**
+**Practical effects, optically tracked – for free.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Unreal Plugin](https://img.shields.io/badge/Unreal-5.3%2B-8A2BE2)](https://unrealengine.com)
 
-> [PROJECT-DESCRIPTION]
+> The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
 
-Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal projects.
+Proptical Unreal Engine Plugin provides VRPN-based motion capture integration for Unreal projects.
 
-**Cross-Platform Support:** This plugin is part of a cross-platform SDK. See also: [Unity Package](../Proptical_Unity/README.md)
+**Cross-Platform Support:** This plugin is part of a cross-platform SDK. See also: [Unity Package](../../Proptical_Unity/README.md)
 
 ---
 
 ## 📋 Overview
 
-Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal projects.
+Proptical Unreal Engine Plugin provides VRPN-based motion capture integration for Unreal projects.
 
-[PROJECT-DESCRIPTION]
+The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
+
+Proptical is the **Blender of mocap** – a single local server that speaks VRPN, OSC, and UDP, works with Unity and Unreal out of the box, and lets artists choose between fiducial markers, markerless bodies, or semantic single-point tracking with a single config toggle.
 
 ---
 
@@ -43,7 +45,7 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 <details>
 <summary><strong>OTHER READMES IN THIS PROJECT</strong></summary>
 
-- [Unity Package](../Proptical_Unity/README.md)
+- [Unity Package](../../Proptical_Unity/README.md)
 
 </details>
 
@@ -51,9 +53,16 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 
 ## ✨ Features
 
-* **[Feature 1]** - [Description of feature 1]
-* **[Feature 2]** - [Description of feature 2]
-* **[Feature 3]** - [Description of feature 3]
+* **VRPN Server Integration** - Drop-in Vicon/OptiTrack replacement using official VRPN library with named rigid bodies and skeletons
+* **Native C++ Core + Blueprint Wrappers** - Unreal-optimized C++ implementation with Blueprint-friendly nodes
+* **Fiducial Tracking** - OpenCV ArUco / ChArUco sub-mm precision tracking
+* **Markerless Body Tracking** - Outside-in multi-person tracking via NIM containers (MMPose, MediaPipe, CLIFF, MvP)
+* **Markerless Single-Point Tracking** - Inside-out 3D transforms via NIM containers (KP3D, OnePose, NOPE, VideoPose3D)
+* **UWB Fusion** - Kalman filter-based 2D world-map fusion with anchor calibration
+* **Auto-Calibration** - One-tap ChArUco board wave calibration
+* **OSC/UDP Support** - Direct OSC and UDP communication alongside VRPN
+* **Unreal Demo Map** - Example map demonstrating prop tracking with sword mesh following tracked prop 1:1
+* **Blueprint Nodes** - Visual scripting support for all tracking features
 
 ---
 
@@ -82,9 +91,12 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 
 ## 🚀 Quick Start
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. Install the Proptical Server and configure your ESP32-CAMs
+2. Start the Proptical Server with your desired tracking mode
+3. Import the Proptical plugin into your Unreal project
+4. Add the VRPN Tracker Actor or Component to your level
+5. Configure the tracker to connect to your Proptical Server
+6. Your Actor/Mesh will now follow the tracked prop/body in real-time
 
 ---
 
@@ -101,7 +113,8 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 
 - Unreal Engine 5.3 or later
 - Visual Studio 2022 (for C++ development)
-- [Additional requirements if any]
+- Proptical Server running on local network
+- ESP32-CAM hardware (for tracking)
 
 ---
 
@@ -118,13 +131,13 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 ## 🗺️ Roadmap
 
 <details>
-<summary><strong>0.0.1 – Pre-Alpha</strong></summary>
+<summary><strong>0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
 
 - 🚧 Create public GitHub repo + MIT license + initial folder structure
 - 🚧 Write and freeze the 0.0.1 README
 - 🚧 Basic plugin structure and module setup
-- 🚧 Core functionality implementation
-- 🚧 Unreal demo map
+- 🚧 VRPN client integration for Unreal
+- 🚧 Unreal demo map – sword mesh follows tracked prop 1:1
 - 🚧 CI – GitHub Actions build and test
 - 🚧 Release 0.0.1 – GitHub Release + plugin package
 
@@ -133,7 +146,7 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 <details>
 <summary><strong>0.1.0 – Pre-Alpha</strong></summary>
 
-- 📋 First public release – core features working
+- 📋 First public release – single-prop inside-out + outside-in rigid bodies
 - 📋 Documentation updates
 - 📋 Example maps
 
@@ -142,17 +155,18 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 <details>
 <summary><strong>0.2.0–0.9.x – Pre-Alpha</strong></summary>
 
-- 📋 Advanced features
-- 📋 Performance optimizations
+- 📋 Markerless bodies (outside-in)
+- 📋 UWB fusion + auto-calibration
+- 📋 Multi-person support
 - 📋 Blueprint node library
-- 📋 Additional platform support
+- 📋 Performance optimizations
 
 </details>
 
 <details>
 <summary><strong>1.0.0 – Alpha</strong></summary>
 
-- 📋 Production-ready plugin
+- 📋 Full multi-person outside-in, stable inside-out point tracking, production-ready plugin
 - 📋 Full documentation
 - 📋 Comprehensive test coverage
 - 📋 Marketplace submission ready
@@ -162,7 +176,8 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 <details>
 <summary><strong>1.x.x – Alpha</strong></summary>
 
-- 📋 Additional features
+- 📋 Hand/face tracking
+- 📋 Live retargeting UI
 - 📋 Performance improvements
 - 📋 Community feedback integration
 - 📋 Blueprint examples
@@ -172,7 +187,9 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 <details>
 <summary><strong>2.0.0+ – Future</strong></summary>
 
-- 📋 Major feature additions
+- 📋 SMPL-X meshes
+- 📋 Real-time denoising
+- 📋 Mobile companion app integration
 - 📋 API stability
 - 📋 Long-term support
 - 📋 Unreal Engine Marketplace listing
@@ -193,7 +210,7 @@ Proptical Unreal Engine Plugin provides [FEATURE-DESCRIPTION] for Unreal project
 
 ## 📄 License
 
-Copyright (c) 2025 AJ
+Copyright (c) 2025 AJ Campbell
 
 Licensed under the MIT License. See LICENSE for details.
 
@@ -228,9 +245,12 @@ Proptical is open-source under the MIT License. Got ideas for how to make Propti
 <details>
 <summary><strong>What We Welcome</strong></summary>
 
-* [Contribution type 1]
-* [Contribution type 2]
-* [Contribution type 3]
+* New model containers
+* Better ESP32 firmware
+* Unreal Blueprint nodes
+* Calibration UI improvements
+* Demo maps (sword fights, virtual production, etc.)
+* C++ optimizations
 
 </details>
 
@@ -238,9 +258,8 @@ Proptical is open-source under the MIT License. Got ideas for how to make Propti
 
 ## 👤 Credits
 
-Created by **AJ**.
+Created by **AJ Campbell**.
 
 ---
 
-_Proptical: [PROJECT-TAGLINE]_
-
+_Proptical: because practical effects should stay practical, and tracking should be free._
