@@ -1,10 +1,11 @@
 # Proptical Unreal Engine Plugin
-**Practical effects, optically tracked – for free.**
+**Free Open-Source MOCAP optical+RF Inside-out-OR-Outside-in full-body-OR-prop AI-driven 3D pose tracking**
 
+[![Version](https://img.shields.io/github/v/tag/ajcampbell1333/Proptical_Unreal?label=version&color=lightgreen)](https://github.com/ajcampbell1333/Proptical_Unreal/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Unreal Plugin](https://img.shields.io/badge/Unreal-5.3%2B-8A2BE2)](https://unrealengine.com)
 
-> The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
+> The open-source motion capture system that tracks real-time 3D pose for any prop, hand, or body using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art video-to-3D-pose deep learning models.
 
 Proptical Unreal Engine Plugin provides VRPN-based motion capture integration for Unreal projects.
 
@@ -14,11 +15,11 @@ Proptical Unreal Engine Plugin provides VRPN-based motion capture integration fo
 
 ## 📋 Overview
 
-Proptical Unreal Engine Plugin provides VRPN-based motion capture integration for Unreal projects.
+The Proptical SDK provides VRPN-based motion capture integration for Unity projects.
 
-The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
+It's an open-source motion capture system that tracks real-time 3D pose for any prop, hand, or body using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art video-to-3D-pose deep learning models.
 
-Proptical is the **Blender of mocap** – a single local server that speaks VRPN, OSC, and UDP, works with Unity and Unreal out of the box, and lets artists choose between fiducial markers, markerless bodies, or semantic single-point tracking with a single config toggle.
+Proptical will be the **Blender of mocap** – a single local server that speaks VRPN, OSC, and UDP, works with Unity and Unreal out-of-the-box, and lets artists choose between fiducial markers, markerless bodies, or semantic single-point tracking to drive and export 3D pose in real-time to other 3D applications (or use it directly in game engine).
 
 ---
 
@@ -73,7 +74,7 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 1. In your Unreal project, navigate to the `Plugins` folder
 2. Add this repository as a submodule:
    ```bash
-   git submodule add https://github.com/ajcampbell1333/Proptical.git Proptical
+   git submodule add https://github.com/ajcampbell1333/Proptical_Unreal.git Proptical
    ```
 3. Regenerate Visual Studio project files (right-click `.uproject` file > Generate Visual Studio project files)
 4. Open the project in Unreal Editor
@@ -157,10 +158,10 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 ## 🗺️ Roadmap
 
 <details>
-<summary><strong>0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
+<summary><strong>v0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
 
 - ✅ Create public GitHub repo + MIT license + initial folder structure
-- ✅ Write and freeze the 0.0.1 README
+- ✅ Write and freeze the v0.0.1 README
 - ✅ Basic plugin structure and module setup
 - ✅ VRPN client integration for Unreal (UDP-focused, minimal protocol structure)
 - ✅ VRPN client integration for Unity (UDP-focused, minimal protocol structure)
@@ -168,7 +169,7 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 </details>
 
 <details>
-<summary><strong>0.0.2 – Pre-Alpha (In Progress)</strong></summary>
+<summary><strong>v0.0.2 – Pre-Alpha (In Progress)</strong></summary>
 
 - 🚧 VRPN Tracker message parsing (requires protocol specification)
 - 🚧 AVRPNTrackedActor (base demo actor for Unreal)
@@ -176,12 +177,12 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 - 🚧 Demo map creation with multiple transform nodes
 - 🚧 Testing and validation of core tracking accuracy
 - 🚧 CI – GitHub Actions build and test
-- 🚧 Release 0.0.2 – GitHub Release + plugin package
+- 🚧 Release v0.0.2 – GitHub Release + plugin package
 
 </details>
 
 <details>
-<summary><strong>0.1.0 – Pre-Alpha</strong></summary>
+<summary><strong>v0.1.0 – Pre-Alpha</strong></summary>
 
 - 📋 First public release – single-prop inside-out + outside-in rigid bodies
 - 📋 Documentation updates
@@ -190,7 +191,7 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 </details>
 
 <details>
-<summary><strong>0.2.0–0.9.x – Pre-Alpha</strong></summary>
+<summary><strong>v0.2.0–v0.9.x – Pre-Alpha</strong></summary>
 
 - 📋 Markerless bodies (outside-in)
 - 📋 UWB fusion + auto-calibration
@@ -202,7 +203,7 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 </details>
 
 <details>
-<summary><strong>1.0.0 – Alpha</strong></summary>
+<summary><strong>v1.0.0 – Alpha</strong></summary>
 
 - 📋 Full multi-person outside-in, stable inside-out point tracking, production-ready plugin
 - 📋 TCP mode for real-time data (fallback for capture stage pros)
@@ -214,7 +215,7 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 </details>
 
 <details>
-<summary><strong>1.x.x – Alpha</strong></summary>
+<summary><strong>v1.x.x – Alpha</strong></summary>
 
 - 📋 Hand/face tracking
 - 📋 Live retargeting UI
@@ -225,7 +226,7 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 </details>
 
 <details>
-<summary><strong>2.0.0+ – Future</strong></summary>
+<summary><strong>v2.0.0+ – Future</strong></summary>
 
 - 📋 SMPL-X meshes
 - 📋 Real-time denoising
@@ -240,8 +241,8 @@ See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details
 
 ## 💬 Support
 
-* **Issues:** github.com/ajcampbell1333/Proptical/issues
-* **Discussions:** github.com/ajcampbell1333/Proptical/discussions
+* **Issues:** github.com/ajcampbell1333/Proptical_Unreal/issues
+* **Discussions:** github.com/ajcampbell1333/Proptical_Unreal/discussions
 * **Unity Version:** github.com/ajcampbell1333/Proptical_Unity
 
 ---
@@ -261,7 +262,7 @@ Proptical is open-source under the MIT License. Got ideas for how to make Propti
 <details>
 <summary><strong>Development Workflow</strong></summary>
 
-1. Fork this repository and clone it (`git clone https://github.com/your-username/Proptical.git`)
+1. Fork this repository and clone it (`git clone https://github.com/your-username/Proptical_Unreal.git`)
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
 3. Add your changes (`git add .`)
 4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
@@ -300,4 +301,4 @@ Created by **AJ Campbell**.
 
 ---
 
-_Proptical: because practical effects should stay practical, and tracking should be free._
+_Proptical: Free Open-Source MOCAP optical+RF Inside-out-OR-Outside-in full-body-OR-prop tracking
