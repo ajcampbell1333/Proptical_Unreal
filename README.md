@@ -11,6 +11,7 @@ Proptical Unreal Engine Plugin provides VRPN-based motion capture integration fo
 
 **Cross-Platform Support:** This plugin is part of a cross-platform SDK. See also: [Unity Package](../../Proptical_Unity/README.md)
 
+>**DISCLAIMER:** This plugin is in Pre-Alpha - not ready for primetime by a longshot yet!
 ---
 
 ## 📋 Overview
