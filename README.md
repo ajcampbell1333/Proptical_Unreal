@@ -126,6 +126,32 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 4. Build the project in **Development Editor** configuration
 5. Launch the project from Visual Studio or Unreal Editor
 
+### Current Status (v0.0.1 Complete - Phase 2 Complete)
+
+✅ **Plugin Foundation (Phase 1)**
+- Plugin manifest (`.uplugin`) created with proper metadata
+- Module structure established (`Source/Proptical/`)
+- Build configuration with networking dependencies (Sockets, Networking modules)
+- Research documentation for VRPN protocol
+
+✅ **VRPN Client Core (Phase 2)**
+- `FVRPNTransformData` - Blueprint-exposed transform data structure
+- `FVRPNMessageParser` - Minimal VRPN protocol parser (structure ready, needs protocol spec)
+- `FVRPNConnectionManager` - UDP socket management with background thread
+- `UVRPNClient` - Blueprint-exposed component with network warnings and tooltips
+- UDP-focused architecture (TCP handshake placeholder, low priority)
+- Thread-safe socket operations with game thread marshaling
+- Network configuration warnings and user guidance
+
+**Current Status: v0.0.1 Complete ✅**
+
+**Next Steps (v0.0.2 - In Progress):**
+- Phase 3: Demo Integration (transform nodes with primitive visualizers)
+- Implement actual VRPN Tracker message parsing (requires protocol specification)
+
+See `Research/Phase3_Module_Plan.md` for detailed module architecture.
+See `Research/Phase2_Implementation_Notes.md` for Phase 2 implementation details.
+
 ---
 
 ## 🗺️ Roadmap
@@ -133,13 +159,24 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 <details>
 <summary><strong>0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
 
-- 🚧 Create public GitHub repo + MIT license + initial folder structure
-- 🚧 Write and freeze the 0.0.1 README
-- 🚧 Basic plugin structure and module setup
-- 🚧 VRPN client integration for Unreal
-- 🚧 Unreal demo map – sword mesh follows tracked prop 1:1
+- ✅ Create public GitHub repo + MIT license + initial folder structure
+- ✅ Write and freeze the 0.0.1 README
+- ✅ Basic plugin structure and module setup
+- ✅ VRPN client integration for Unreal (UDP-focused, minimal protocol structure)
+- ✅ VRPN client integration for Unity (UDP-focused, minimal protocol structure)
+- ✅ Cross-platform Phase 2 implementation (Unreal + Unity)
+</details>
+
+<details>
+<summary><strong>0.0.2 – Pre-Alpha (In Progress)</strong></summary>
+
+- 🚧 VRPN Tracker message parsing (requires protocol specification)
+- 🚧 AVRPNTrackedActor (base demo actor for Unreal)
+- 🚧 AVRPNTransformNode (transform node with primitive visualizers - Cube, Sphere, Cylinder)
+- 🚧 Demo map creation with multiple transform nodes
+- 🚧 Testing and validation of core tracking accuracy
 - 🚧 CI – GitHub Actions build and test
-- 🚧 Release 0.0.1 – GitHub Release + plugin package
+- 🚧 Release 0.0.2 – GitHub Release + plugin package
 
 </details>
 
@@ -160,6 +197,7 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 - 📋 Multi-person support
 - 📋 Blueprint node library
 - 📋 Performance optimizations
+- 📋 Core tracking accuracy validation (OpenCV & Docker model integration)
 
 </details>
 
@@ -167,6 +205,8 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 <summary><strong>1.0.0 – Alpha</strong></summary>
 
 - 📋 Full multi-person outside-in, stable inside-out point tracking, production-ready plugin
+- 📋 TCP mode for real-time data (fallback for capture stage pros)
+- 📋 NAT traversal automation
 - 📋 Full documentation
 - 📋 Comprehensive test coverage
 - 📋 Marketplace submission ready
@@ -195,8 +235,6 @@ Proptical is the **Blender of mocap** – a single local server that speaks VRPN
 - 📋 Unreal Engine Marketplace listing
 
 </details>
-
-**Note:** Use ✅ Implemented icon for completed tasks.
 
 ---
 

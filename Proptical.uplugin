@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.0.1",
+	"FriendlyName": "Proptical",
+	"Description": "VRPN-based motion capture integration for Unreal Engine. Provides drop-in Vicon/OptiTrack replacement using ESP32-CAMs, Wi-Fi, UWB anchors, and state-of-the-art 3D pose models.",
+	"Category": "Motion Capture",
+	"CreatedBy": "AJ Campbell",
+	"CreatedByURL": "https://github.com/ajcampbell1333",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/ajcampbell1333/Proptical_Unreal/issues",
+	"EngineVersion": "5.5.0",
+	"EnabledByDefault": true,
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": true,
+	"Modules": [
+		{
+			"Name": "Proptical",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": []
+}
+
